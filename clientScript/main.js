@@ -3,8 +3,9 @@
  */
 'use strict';
 
-var Backbone = require('@shim/backbone'),
-    jquery = require('@shim/jquery'),
+// Load jQuery first since everything else depends on it
+var jquery = require('@shim/jquery'),
+    Backbone = require('@shim/backbone'),
     App = require('./app'),
     RootLayoutView = require('@view/rootLayoutView'),
     // Load the client-side (Bower) libraries
