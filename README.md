@@ -26,3 +26,6 @@ $ grunt build
 ```
 
 This will generate the `client.js` artifact under the `dist/js` directory. This artifact is used by the `index.html` page to run the Marionette application.
+
+### Troubleshooting
+If you are having trouble getting the `npm install` to succeed, try deleting the `node_modules` directory.

@@ -5,25 +5,17 @@
 
 var Marionette = require('@shim/marionette'),
     NavRegion = require('@region/navRegion'),
-    NavLoginButtonView = require('@view/navLoginButtonView'),
     rootLayoutView;
 
 rootLayoutView = Marionette.LayoutView.extend({
 
-    el: 'body',
+    el: '.viewport-container',
 
     /**
      * Set the regions that the root view will control
      */
     regions: {
         navRegion: NavRegion
-    },
-
-    /**
-     * Initialize and show all of the necessary views for the regions.
-     */
-    initialize: function() {
-        this.navRegion.show(new NavLoginButtonView());
     }
 
 });

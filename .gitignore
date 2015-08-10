@@ -1,7 +1,12 @@
 ### Node ###
 node_modules
-**/dist
 
 ### Intellij ###
 .idea/**
 *.iml
+
+### Bower ###
+bower_components
+
+### Client Files ###
+**/dist

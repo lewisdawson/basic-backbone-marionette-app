@@ -1,3 +1,6 @@
+/**
+ * The initializer for the Application.
+ */
 'use strict';
 
 var Backbone = require('@shim/backbone'),

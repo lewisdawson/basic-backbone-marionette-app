@@ -1,12 +1,15 @@
+/**
+ * The main entry point where the application (app) is created, initialized, and started.
+ */
 'use strict';
 
 var Backbone = require('@shim/backbone'),
-    $ = require('@shim/jquery'),
+    jquery = require('@shim/jquery'),
     App = require('./app'),
     RootLayoutView = require('@view/rootLayoutView'),
+    // Load the client-side (Bower) libraries
+    lib = require('@dist/bower-lib'),
     app;
-
-Backbone.$ = $;
 
 app = new App();
 // Once the app's start event has been fired, invoke the Backbone history

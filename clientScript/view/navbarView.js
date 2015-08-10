@@ -2,15 +2,14 @@
 
 var Backbone = require('@shim/backbone'),
     Marionette = require('@shim/marionette'),
-    template = require('@template/navLoginButtonTemplate.hbs');
+    template = require('@template/navbarViewTemplate.hbs');
 
 module.exports = Marionette.ItemView.extend({
 
     model: new Backbone.Model({
-        name: 'Tim...'
+        companyName: 'Example Project'
     }),
 
     template: template
 
 });
-

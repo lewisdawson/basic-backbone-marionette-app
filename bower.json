@@ -1,0 +1,21 @@
+{
+  "name": "basic-backbone-marionette-app",
+  "main": "index.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/lewisdawson/basic-backbone-marionette-app",
+  "authors": [
+    "Lewis Dawson <ldawson7777@yahoo.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-css": "~3.3.4"
+  }
+}
