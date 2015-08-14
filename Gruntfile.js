@@ -24,15 +24,35 @@ function browserify() {
  * The configuration for the `bower_concat` task.
  */
 function bowerConcat() {
+    console.log('called bowerConcat()');
     return {
         all: {
             dest: '<%= config.distScripts %>/bower-lib.js',
-            cssDest: '<%= config.distStyles %>/client.css',
+            cssDest: '<%= config.distStyles %>/bower.css',
             exclude: [
                 'jquery'
             ],
             bowerOptions: {
                 relative: false
+            }
+        }
+    };
+}
+
+/**
+ *
+ */
+function cssMin() {
+    console.log('called cssMin()');
+    return {
+        options: {
+            shorthandCompacting: false,
+            roundingPrecision: -1
+        },
+        target: {
+            files: {
+                '<%= config.distStyles %>/client.css': ['<%= config.styles %>/*.css', '!<%= config.distStyles %>/*.css',
+                                                        '<%= config.distStyles %>/bower.css']
             }
         }
     };
@@ -53,19 +73,21 @@ function config() {
     return config;
 }
 
-module.exports = function (grunt) {
+module.exports = function(grunt) {
     require('time-grunt')(grunt);
     require('load-grunt-tasks')(grunt);
 
     grunt.initConfig({
         config: config(),
+        bower_concat: bowerConcat(),
         browserify: browserify(),
-        bower_concat: bowerConcat()
+        cssmin: cssMin()
     });
 
     grunt.registerTask('build', [
         'bower_concat',
-        'browserify'
+        'browserify',
+        'cssmin'
     ]);
 
 };
