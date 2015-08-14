@@ -40,7 +40,7 @@ function bowerConcat() {
 }
 
 /**
- *
+ * The configuration for the `cssmin` task.
  */
 function cssMin() {
     console.log('called cssMin()');
@@ -55,6 +55,14 @@ function cssMin() {
                                                         '<%= config.distStyles %>/bower.css']
             }
         }
+    };
+}
+
+function watch() {
+    return {
+        files: ['<%= config.scripts %>/**/*', '!<%= config.distScripts %>/**/*', '<%= config.styles %>/**/*',
+                '!<%= config.distStyles %>/**/*'],
+        tasks: ['build']
     };
 }
 
@@ -81,13 +89,14 @@ module.exports = function(grunt) {
         config: config(),
         bower_concat: bowerConcat(),
         browserify: browserify(),
-        cssmin: cssMin()
+        cssmin: cssMin(),
+        watch: watch()
     });
 
     grunt.registerTask('build', [
         'bower_concat',
-        'browserify',
-        'cssmin'
+        'cssmin',
+        'browserify'
     ]);
 
 };

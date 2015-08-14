@@ -5,6 +5,7 @@
 
 var Marionette = require('@shim/marionette'),
     NavRegion = require('@region/navRegion'),
+    HeroRegion = require('@region/heroRegion'),
     rootLayoutView;
 
 rootLayoutView = Marionette.LayoutView.extend({
@@ -15,7 +16,8 @@ rootLayoutView = Marionette.LayoutView.extend({
      * Set the regions that the root view will control
      */
     regions: {
-        navRegion: NavRegion
+        navRegion: NavRegion,
+        heroRegion: HeroRegion
     }
 
 });
