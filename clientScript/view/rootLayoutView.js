@@ -6,6 +6,7 @@
 var Marionette = require('@shim/marionette'),
     NavRegion = require('@region/navRegion'),
     HeroRegion = require('@region/heroRegion'),
+    MarketingColumns = require('@region/marketingColumnsRegion'),
     rootLayoutView;
 
 rootLayoutView = Marionette.LayoutView.extend({
@@ -17,7 +18,8 @@ rootLayoutView = Marionette.LayoutView.extend({
      */
     regions: {
         navRegion: NavRegion,
-        heroRegion: HeroRegion
+        heroRegion: HeroRegion,
+        marketingColumns: MarketingColumns,
     }
 
 });
