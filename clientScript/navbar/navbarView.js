@@ -2,7 +2,7 @@
 
 var Backbone = require('@shim/backbone'),
     Marionette = require('@shim/marionette'),
-    template = require('@template/navbarViewTemplate.hbs');
+    template = require('@navbar/navbarViewTemplate.hbs');
 
 module.exports = Marionette.ItemView.extend({
 

@@ -2,7 +2,7 @@
 
 var Backbone = require('@shim/backbone'),
     Marionette = require('@shim/marionette'),
-    template = require('@template/marketingColumnsTemplate.hbs');
+    template = require('@marketingColumns/marketingColumnsTemplate.hbs');
 
 module.exports = Marionette.ItemView.extend({
 

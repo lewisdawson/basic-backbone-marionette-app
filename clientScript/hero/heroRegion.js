@@ -1,15 +1,15 @@
 /**
- * The region used to control the marketing columns section.
+ * The region used to control the hero section.
  */
 'use strict';
 
 var Marionette = require('@shim/marionette'),
-    MarketingColumnsView = require('@view/marketingColumnsView'),
+    HeroView = require('@hero/heroView'),
     region;
 
 region = Marionette.Region.extend({
 
-    el: '.marketing-columns',
+    el: '.hero',
 
     /**
      * Initialize the region and show all of Views.
@@ -22,7 +22,7 @@ region = Marionette.Region.extend({
      * Initializes all of the views associated with the region.
      */
     initializeViews: function() {
-        this.show(new MarketingColumnsView());
+        this.show(new HeroView());
     }
 
 });

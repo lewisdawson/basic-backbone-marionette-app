@@ -4,9 +4,9 @@
 'use strict';
 
 var Marionette = require('@shim/marionette'),
-    NavRegion = require('@region/navRegion'),
-    HeroRegion = require('@region/heroRegion'),
-    MarketingColumns = require('@region/marketingColumnsRegion'),
+    NavbarRegion = require('@navbar/navbarRegion'),
+    HeroRegion = require('@hero/heroRegion'),
+    MarketingColumns = require('@marketingColumns/marketingColumnsRegion'),
     rootLayoutView;
 
 rootLayoutView = Marionette.LayoutView.extend({
@@ -17,9 +17,9 @@ rootLayoutView = Marionette.LayoutView.extend({
      * Set the regions that the root view will control
      */
     regions: {
-        navRegion: NavRegion,
+        navbarRegion: NavbarRegion,
         heroRegion: HeroRegion,
-        marketingColumns: MarketingColumns,
+        marketingColumns: MarketingColumns
     }
 
 });

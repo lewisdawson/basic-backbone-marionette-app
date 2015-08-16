@@ -7,7 +7,7 @@
 var jquery = require('@shim/jquery'),
     Backbone = require('@shim/backbone'),
     App = require('./app'),
-    RootLayoutView = require('@view/rootLayoutView'),
+    RootLayoutView = require('@root/rootLayoutView'),
     // Load the client-side (Bower) libraries
     lib = require('@dist/bower-lib'),
     app;
