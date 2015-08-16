@@ -7,10 +7,11 @@
 var jquery = require('@shim/jquery'),
     Backbone = require('@shim/backbone'),
     App = require('./app'),
-    RootLayoutView = require('@view/rootLayoutView'),
-    // Load the client-side (Bower) libraries
-    lib = require('@dist/bower-lib'),
+    RootLayoutView = require('@root/rootLayoutView'),
     app;
+
+// Load the client-side (Bower) libraries;
+require('@dist/bower-lib');
 
 app = new App();
 // Once the app's start event has been fired, invoke the Backbone history

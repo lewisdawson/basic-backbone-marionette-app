@@ -4,12 +4,10 @@
 'use strict';
 
 var Marionette = require('@shim/marionette'),
-    NavbarView = require('@view/navbarView'),
+    NavbarView = require('@navbar/navbarView'),
     region;
 
 region = Marionette.Region.extend({
-
-    el: '.navbar',
 
     /**
      * Initialize the region and show all of Views.
