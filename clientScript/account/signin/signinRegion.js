@@ -1,15 +1,12 @@
-/**
- * The region used to control the navbar section.
- */
 'use strict';
 
 var Marionette = require('@shim/marionette'),
-    NavbarView = require('@navbar/navbarView'),
+    SigninView = require('@account/signin/signinView'),
     region;
 
 region = Marionette.Region.extend({
 
-    el: '.navbar',
+    el: '.account-action',
 
     /**
      * Initialize the region and show all of Views.
@@ -22,7 +19,7 @@ region = Marionette.Region.extend({
      * Initializes all of the views associated with the region.
      */
     initializeViews: function() {
-        this.show(new NavbarView());
+        this.show(new SigninView());
     }
 
 });

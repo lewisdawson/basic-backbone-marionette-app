@@ -4,8 +4,8 @@
 'use strict';
 
 var Marionette = require('@shim/marionette'),
-    NavbarRegion = require('@navbar/navbarRegion'),
-    ContentRegion = require('@content/contentRegion'),
+    NavbarRegion = require('@root/navbar/navbarRegion'),
+    ContentRegion = require('@root/content/contentRegion'),
     rootLayoutView;
 
 rootLayoutView = Marionette.LayoutView.extend({

@@ -1,7 +1,7 @@
 'use strict';
 
 var Marionette = require('@shim/marionette'),
-    ContentRouter = require('@content/contentRouter'),
+    ContentRouter = require('@root/content/contentRouter'),
     Router;
 
 Router = Marionette.AppRouter.extend({
