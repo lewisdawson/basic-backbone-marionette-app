@@ -57,3 +57,6 @@ $ grunt watch
 
 ###### My `npm install` keeps failing
 Try deleting the `node_modules` directory and then running `npm install` again.
+
+###### My application is blank
+Try deleting the `node_modules` directory and then running `npm install` again. In addition, delete the `bower_components` directory and then run `grunt build`.
