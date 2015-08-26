@@ -66,6 +66,18 @@ function watch() {
     };
 }
 
+function bower() {
+    var exec = require('child_process').exec,
+        cb = this.async();
+
+    console.log('Running bower install.');
+
+    exec('./node_modules/bower/bin/bower install', {cwd: __dirname}, function(err, stdout, stderr) {
+        console.log(stdout);
+        cb();
+    });
+}
+
 /**
  * The common configuration for all grunt tasks.
  */
@@ -93,7 +105,10 @@ module.exports = function(grunt) {
         watch: watch()
     });
 
+    grunt.registerTask('bower', bower);
+
     grunt.registerTask('build', [
+        'bower',
         'bower_concat',
         'cssmin',
         'browserify'
