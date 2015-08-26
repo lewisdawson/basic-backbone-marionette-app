@@ -11,8 +11,8 @@ var path = require('path');
 function browserify() {
     return {
         dist: {
-            src: ['<%= config.scripts %>/{,*/}*.*', '!<%= config.distScripts %>/{,*/}*.*'],
-            dest: '<%= config.distScripts %>/client.js'
+            src: ['<%= config.client %>/{,*/}*.*', '!<%= config.clientDist %>/{,*/}*.*'],
+            dest: '<%= config.clientDist %>/client.js'
         },
         options: {
             transform: ['hbsfy']
@@ -27,8 +27,8 @@ function bowerConcat() {
     console.log('called bowerConcat()');
     return {
         all: {
-            dest: '<%= config.distScripts %>/bower-lib.js',
-            cssDest: '<%= config.distStyles %>/bower.css',
+            dest: '<%= config.clientDist %>/bower-lib.js',
+            cssDest: '<%= config.clientDist %>/bower.css',
             exclude: [
                 'jquery'
             ],
@@ -51,8 +51,8 @@ function cssMin() {
         },
         target: {
             files: {
-                '<%= config.distStyles %>/client.css': ['<%= config.styles %>/*.css', '!<%= config.distStyles %>/*.css',
-                                                        '<%= config.distStyles %>/bower.css']
+                '<%= config.clientDist %>/client.css': ['<%= config.client %>/**/*.css', '!<%= config.clientDist %>/**/*.css',
+                                                        '<%= config.clientDist %>/bower.css']
             }
         }
     };
@@ -60,8 +60,7 @@ function cssMin() {
 
 function watch() {
     return {
-        files: ['<%= config.scripts %>/**/*', '!<%= config.distScripts %>/**/*', '<%= config.styles %>/**/*',
-                '!<%= config.distStyles %>/**/*'],
+        files: ['<%= config.client %>/**/*', '!<%= config.clientDist %>/**/*'],
         tasks: ['buildQuick']
     };
 }
@@ -82,16 +81,14 @@ function bower() {
 }
 
 /**
- * The common configuration for all grunt tasks.
+ * The common configurations for all grunt tasks.
  */
 function config() {
     var config = {};
 
-    config.scripts = 'clientScript';
-    config.styles = 'clientStyle';
+    config.client = 'client';
     config.dist = 'dist';
-    config.distScripts = path.join(config.scripts, config.dist);
-    config.distStyles = path.join(config.styles, config.dist);
+    config.clientDist = path.join(config.client, config.dist);
 
     return config;
 }

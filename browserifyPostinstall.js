@@ -8,7 +8,7 @@ var slinker = require('slinker'),
 
 slinker.link({
     modules: ['shim', 'dist', 'root', 'index', 'account'],
-    modulesBasePath: path.join(__dirname, 'clientScript'),
+    modulesBasePath: path.join(__dirname, 'client'),
     symlinkPrefix: '@',
     nodeModulesPath: path.join(__dirname, 'node_modules'),
     onComplete: function() {
