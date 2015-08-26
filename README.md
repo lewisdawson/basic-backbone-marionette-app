@@ -33,7 +33,7 @@ $ cd <root-of-app>
 $ grunt build
 ```
 
-This will generate the `clientScript/dist/client.js` artifact as well as the `clientStyle/dist/client.css` artifact. These artifacts are used by the `index.html` page to run the Marionette application.
+This will generate the `client/dist/client.js` artifact as well as the `client/dist/client.css` artifact. These artifacts are used by the `index.html` page to run the Marionette application.
 
 ## Running
 Before running for the first time, make sure to execute the _Installation_ instructions. Once you've done that, you can run the application by executing `npm start`:
