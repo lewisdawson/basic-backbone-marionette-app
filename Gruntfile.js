@@ -62,10 +62,13 @@ function watch() {
     return {
         files: ['<%= config.scripts %>/**/*', '!<%= config.distScripts %>/**/*', '<%= config.styles %>/**/*',
                 '!<%= config.distStyles %>/**/*'],
-        tasks: ['build']
+        tasks: ['buildQuick']
     };
 }
 
+/**
+ * Executes a `bower install`.
+ */
 function bower() {
     var exec = require('child_process').exec,
         cb = this.async();
@@ -109,6 +112,10 @@ module.exports = function(grunt) {
 
     grunt.registerTask('build', [
         'bower',
+        'buildQuick'
+    ]);
+
+    grunt.registerTask('buildQuick', [
         'bower_concat',
         'cssmin',
         'browserify'
